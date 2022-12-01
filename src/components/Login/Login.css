@@ -17,6 +17,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 100%;
 }
 
 .login-container  a {
@@ -29,4 +30,20 @@
 
 .login-container  a  img {
     width: 100%;
+}
+
+.form-container {
+    width: 548px;
+    height: 100%;
+    border-radius: 8px;
+    padding: 54px 64px 48px;
+    background-color: #fff;
+    box-shadow: 0 4px 18px rgb(0 0 0 / 25%);
+}
+
+.form-container h1 {
+    color: #181818;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 7px;
 }
