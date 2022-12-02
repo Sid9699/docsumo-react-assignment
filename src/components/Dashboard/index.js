@@ -10,7 +10,7 @@ const Dashboard = ({ user, updateUser }) => {
 
   return (
     <>
-      <div>Dashboard</div>
+      {user && <div>Hello, {user.user.full_name}</div>}
       <button onClick={() => updateUser(null)}>Log Out</button>
     </>
   );

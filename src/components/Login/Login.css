@@ -52,6 +52,10 @@ form {
     margin-top: 38px;
 }
 
+.form-group {
+    position: relative;
+}
+
 .form-group:not(:first-child) {
     margin-top: 28px;
 }
@@ -62,6 +66,15 @@ form {
     margin-bottom: 6px;
     display: inline-block;
     color: rgba(24,24,24,.8);
+}
+
+.pass-visible {
+    top: calc(72% - 13px);
+    right: 12px;
+    z-index: 10;
+    line-height: 1;
+    position: absolute;
+    cursor: pointer;
 }
 
 .form-container input:first-child {
@@ -77,6 +90,10 @@ input {
     background-color: #fff;
     border: 1px solid #a3adce;
     font: normal 500 16px/1 Lato,sans-serif;
+}
+
+input.error {
+    border-color: #c70011;
 }
 
 input:focus {
@@ -146,4 +163,12 @@ button {
     color: #344bfc;
     font-size: inherit;
     text-decoration: underline;
+}
+
+.error-message {
+    margin-top: 8px;
+    color: #c2004f;
+    display: flex;
+    align-items: center;
+    font: normal normal 14px/1.5 Lato,sans-serif;
 }
