@@ -20,7 +20,7 @@
     min-height: 100%;
 }
 
-.login-container  a {
+.login-container .logo {
     position: absolute;
     left: 0;
     top: 0;
@@ -28,7 +28,7 @@
     display: inline-block;
 }
 
-.login-container  a  img {
+.login-container .logo img {
     width: 100%;
 }
 
@@ -46,4 +46,104 @@
     font-size: 24px;
     font-weight: 700;
     margin-bottom: 7px;
+}
+
+form {
+    margin-top: 35px;
+}
+
+.form-group:not(:first-child) {
+    margin-top: 28px;
+}
+
+.form-group > label {
+    font-size: 14px;
+    line-height: 1.2;
+    margin-bottom: 6px;
+    display: inline-block;
+    color: rgba(24,24,24,.8);
+}
+
+.form-container input:first-child {
+    margin-top: 6px;
+}
+
+input {
+    width: 100%;
+    height: 40px;
+    outline: none;
+    padding: 11px 14px;
+    border-radius: 4px;
+    background-color: #fff;
+    border: 1px solid #a3adce;
+    font: normal 500 16px/1 Lato,sans-serif;
+}
+
+input:focus {
+    border-color: #180c2e;
+}
+
+input::-webkit-input-placeholder {
+    font-size: 14px;
+    font-weight: 400;
+    color: #979797;
+}
+
+a {
+    color: #000;
+    font-size: 14px;
+    line-height: 1.7;
+    display: inline-block;
+    text-decoration: none;
+}
+
+a:hover {
+    font-size: 14px;
+    color: #344bfc;
+    text-decoration: underline;
+}
+
+.form-container a {
+    margin-top: 8px;
+}
+
+.align-right {
+    text-align: right;
+}
+
+button {
+    width: 100%;
+    height: 48px;
+    padding: 14px 15px;
+    border-radius: 4px;
+    justify-content: center;
+    font: normal normal 16px/1.25 Lato,sans-serif;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 10%);
+    background: #4d61fc;
+    color: #fff;
+    border: 0;
+    cursor: pointer;
+}
+
+.form-container button {
+    margin-top: 32px;
+}
+
+.sign-up-message {
+    color: #414141;
+    margin-top: 16px;
+    text-align: center;
+    font: normal normal 18px Lato,sans-serif;
+}
+
+.sign-up-message a {
+    color: #4d61fc;
+    font: normal 600 18px Lato,sans-serif;
+    margin: 0;
+}
+
+.sign-up-message a:hover {
+    color: #344bfc;
+    font-size: inherit;
+    text-decoration: underline;
 }

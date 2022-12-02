@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-const Dashboard = ({ user, setUser }) => {
+const Dashboard = ({ user, updateUser }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -11,7 +11,7 @@ const Dashboard = ({ user, setUser }) => {
   return (
     <>
       <div>Dashboard</div>
-      <button onClick={() => setUser(null)}>Log Out</button>
+      <button onClick={() => updateUser(null)}>Log Out</button>
     </>
   );
 };

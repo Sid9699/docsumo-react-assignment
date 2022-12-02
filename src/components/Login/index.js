@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
 
-const Login = ({ user, setUser }) => {
+const Login = ({ user, updateUser }) => {
   const navigate = useNavigate();
   const {
     register,
@@ -28,7 +28,8 @@ const Login = ({ user, setUser }) => {
           body: JSON.stringify(values),
         }
       );
-      setUser(res.body.data);
+      const data = await res.json();
+      updateUser(data.data);
     } catch (err) {
       console.log(err);
     }
@@ -37,7 +38,7 @@ const Login = ({ user, setUser }) => {
   return (
     <div className="login-container">
       <div>
-        <Link to="/">
+        <Link to="/" className="logo">
           <img
             src="https://app.docsumo.com/static/images/docsumo-logo.1a785f0ecf111285ae69.png"
             alt="docsumo"
@@ -46,30 +47,41 @@ const Login = ({ user, setUser }) => {
         <div className="form-container">
           <h1>Login to your Docsumo account</h1>
           <form onSubmit={handleSubmit(onSubmit)}>
-            <div>
-              <label for="email">Work Email</label>
-              <input
-                id="email"
-                {...register("email", {
-                  required: "Please enter a valid email address",
-                  pattern: {
-                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                    message: "Please enter a valid email address",
-                  },
-                })}
-              />
+            <div className="form-group">
+              <label htmlFor="email">Work Email</label>
+              <div>
+                <input
+                  id="email"
+                  placeholder="janedoe@abc.com"
+                  autoFocus
+                  {...register("email", {
+                    required: "Please enter a valid email address",
+                    pattern: {
+                      value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                      message: "Please enter a valid email address",
+                    },
+                  })}
+                />
+              </div>
             </div>
-            <div>
-              <label for="password">Password</label>
+            <div className="form-group">
+              <label htmlFor="password">Password</label>
               <input
                 id="password"
+                placeholder="Enter password here..."
                 {...register("password", {
                   required: true,
                 })}
               />
             </div>
-            <button type="submit">Submit</button>
+            <div className="align-right">
+              <Link to="/login">Forgot Password?</Link>
+            </div>
+            <button type="submit">Login</button>
           </form>
+          <div className="sign-up-message">
+            Don't have an account? &nbsp;<Link to="/login">Sign Up</Link>
+          </div>
         </div>
       </div>
     </div>
