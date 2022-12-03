@@ -1,0 +1,26 @@
+.toast {
+    width: 280px;
+    color: white;
+    padding: 16px;
+    border-radius: 4px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.toast h6 {
+    font-size: 18px;
+}
+
+.toast p {
+    font-size: 14px;
+}
+
+.toast-success {
+    background-color: green;
+}
+
+.toast-error {
+    background-color: #c2004f;
+}

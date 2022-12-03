@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
 
-const Login = ({ user, updateUser }) => {
+const Login = ({ user, updateUser, updateToast }) => {
   const [passwordVisible, setPasswordVisible] = useState(false);
 
   const navigate = useNavigate();
@@ -31,7 +31,19 @@ const Login = ({ user, updateUser }) => {
         }
       );
       const data = await res.json();
+      if (data.error) {
+        updateToast({
+          title: data.error,
+          description: data.message,
+          type: "error",
+        });
+        return;
+      }
       updateUser(data.data);
+      updateToast({
+        title: "Logged in successfully.",
+        type: "success",
+      });
     } catch (err) {
       console.log(err);
     }
